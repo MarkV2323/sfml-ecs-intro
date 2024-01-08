@@ -9,6 +9,9 @@ add_compile_options(-Wall)
 # Set Sources
 set(SOURCES
     src/main.cc
+    src/tile.cc
+    src/boundingBox.cc
+    src/position.cc
 )
 
 # Setup SFML_PATH, must use \\ due to Windows!
