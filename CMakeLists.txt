@@ -3,26 +3,30 @@ set(CMAKE_CXX_STANDARD 17)
 
 project(sfml-ecs-intro)
 
-# Set target (app) compile flags
-add_compile_options(-Wall)
-
-# Set Sources
-set(SOURCES
-    src/main.cc
-    src/tile.cc
-    src/boundingBox.cc
-    src/position.cc
-)
-
 # Setup SFML_PATH, must use \\ due to Windows!
 set(SFML_PATH C:\\Users\\Mark\\Desktop\\cpp-apps\\lib\\SFML-2.6.1)
 
-# Include our SFML headers, and link to our SFML lib files. 
-include_directories(${SFML_PATH}\\include)
-link_directories(${SFML_PATH}\\lib)
+# Set Headers
+set (HEADERS 
+    src/entity/tile.h
+    src/component/boundingBox.h
+)
 
-# Build Main Executable
+# Set Sources
+set(SOURCES
+    ${HEADERS}
+    src/main.cc
+    src/entity/tile.cc
+    src/component/boundingBox.cc
+)
+
+# Build Main Executable (Our Target)
 add_executable(sfml-ecs-intro ${SOURCES})
 
-# Specify what libs to link into our executable
+# Inlcude our internal headers, SFML headers
+target_include_directories(sfml-ecs-intro PRIVATE ${PROJECT_SOURCE_DIR}/src)
+target_include_directories(sfml-ecs-intro PRIVATE ${SFML_PATH}/include)
+target_link_directories(sfml-ecs-intro PRIVATE ${SFML_PATH}/lib) 
+
+# Specify what sfml-libs to link into our target
 target_link_libraries(sfml-ecs-intro sfml-system sfml-window sfml-graphics sfml-audio sfml-network sfml-main)

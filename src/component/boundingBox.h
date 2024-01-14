@@ -11,10 +11,10 @@ private:
 public:
     BoundingBox(int w, int h);
     ~BoundingBox();
-    int getW();
-    int getH();
-    bool setW(int& w1);
-    bool setH(int& h1);
+    int getWidth();
+    int getHeight();
+    bool setWidth(int& w);
+    bool setHeight(int& h);
 };
 
 }

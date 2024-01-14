@@ -5,25 +5,21 @@ namespace ecs {
 
     BoundingBox::~BoundingBox() {}
     
-    int BoundingBox::getW()
-    {
+    int BoundingBox::getWidth() {
         return width;
     }
 
-    int BoundingBox::getH()
-    {
+    int BoundingBox::getHeight() {
         return height;
     }
 
-    bool BoundingBox::setW(int &w1)
-    {
-        width = w1;
+    bool BoundingBox::setWidth(int& w) {
+        width = w;
         return true;
     }
 
-    bool BoundingBox::setH(int &h1)
-    {
-        height = h1;
+    bool BoundingBox::setHeight(int& h) {
+        height = h;
         return true;
     }
 }
