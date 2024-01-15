@@ -10,6 +10,8 @@ set(SFML_PATH C:\\Users\\Mark\\Desktop\\cpp-apps\\lib\\SFML-2.6.1)
 set (HEADERS 
     src/entity/tile.h
     src/component/boundingBox.h
+    src/component/transform.h
+    src/component/shape.h
 )
 
 # Set Sources
@@ -18,6 +20,8 @@ set(SOURCES
     src/main.cc
     src/entity/tile.cc
     src/component/boundingBox.cc
+    src/component/transform.cc
+    src/component/shape.cc
 )
 
 # Build Main Executable (Our Target)
