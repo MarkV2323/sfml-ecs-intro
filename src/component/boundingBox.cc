@@ -1,25 +1,18 @@
 #include "boundingBox.h"
 
 namespace ecs {
-    BoundingBox::BoundingBox(int w, int h) : width(w), height(h) {}
+    BoundingBox::BoundingBox(sf::Vector2f bb) : boundingBox(bb) {}
+
+    BoundingBox::BoundingBox(float w, float h) : boundingBox(sf::Vector2f(w, h)) {}
 
     BoundingBox::~BoundingBox() {}
-    
-    int BoundingBox::getWidth() {
-        return width;
+
+    sf::Vector2f& BoundingBox::getBoundingBox() {
+        return boundingBox;
     }
 
-    int BoundingBox::getHeight() {
-        return height;
-    }
-
-    bool BoundingBox::setWidth(int& w) {
-        width = w;
-        return true;
-    }
-
-    bool BoundingBox::setHeight(int& h) {
-        height = h;
+    bool BoundingBox::setBoundingBox(sf::Vector2f &bb) {
+        boundingBox = bb;
         return true;
     }
 }

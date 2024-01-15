@@ -15,11 +15,8 @@ public:
     Shape(float r);
     ~Shape();
 
-    float getRadius();
-    bool setRadius(float& r);
-
-    bool setFillColor(const sf::Color& c);
-    bool setPosition(const sf::Vector2f& p); 
+    sf::CircleShape& getShape();
+    bool setPosition(sf::Vector2f& p);
 };
 
 }

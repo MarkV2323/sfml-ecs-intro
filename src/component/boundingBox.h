@@ -1,20 +1,21 @@
 #pragma once
 
+#include <SFML/System/Vector2.hpp>
+
 namespace ecs {
 
 class BoundingBox
 {
 private:
     BoundingBox() {};
-    int width;
-    int height;
+    sf::Vector2f boundingBox;
 public:
-    BoundingBox(int w, int h);
+    BoundingBox(sf::Vector2f bb);
+    BoundingBox(float w, float h);
     ~BoundingBox();
-    int getWidth();
-    int getHeight();
-    bool setWidth(int& w);
-    bool setHeight(int& h);
+    
+    sf::Vector2f& getBoundingBox();
+    bool setBoundingBox(sf::Vector2f& bb);
 };
 
 }
